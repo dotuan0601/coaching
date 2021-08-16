@@ -1,41 +1,33 @@
 package model
 
-type Transactions struct {
-	id                       int64
-	trace_number             string
-	blockid                  int64
-	txhash                   string
-	txcount                  int64
-	chaincodename            string
-	status                   int64
-	creator_msp_id           string
-	endorser_msp_id          string
-	chaincode_id             string
-	write_set                string
-	block_hash               string
-	channel_genesis_hash     string
-	validation_code          string
+type Transaction struct {
+	Id                       int64
+	TraceNumber              string
+	Block_id                 int64
+	Txhash                   string
+	Txcount                  int64
+	Chaincodename            string
+	Status                   int64
+	Creator_msp_id           string
+	Endorser_msp_id          string
+	Chaincode_id             string
+	Write_set                string
+	Block_hash               string
+	Channel_genesis_hash     string
+	Validation_code          string
 	envelope_signature       string
-	payload_extension        string
-	creator_id_bytes         string
-	creator_nonce            string
-	chaincode_proposal_input string
-	tx_response              string
-	payload_proposal_hash    string
-	endorser_id_bytes        string
-	endorser_signature       string
-	network_name             string
+	Payload_extension        string
+	Creator_id_bytes         string
+	Creator_nonce            string
+	Chaincode_proposal_input string
+	Tx_response              string
+	Payload_proposal_hash    string
+	Endorser_id_bytes        string
+	Endorser_signature       string
+	Network_name             string
 }
 
-var (
-	trans = []Transactions{
-		{id: 1, trace_number: "test",
-			blockid: 2, txhash: "test", txcount: 3,
-			chaincodename: "test", status: 4,
-			creator_msp_id: "test", endorser_msp_id: "test", chaincode_id: "test",
-			write_set: "test", block_hash: "test", channel_genesis_hash: "test",
-			validation_code: "test", envelope_signature: "test", payload_extension: "test",
-			creator_id_bytes: "test", creator_nonce: "test", chaincode_proposal_input: "test",
-			tx_response: "test", payload_proposal_hash: "test", endorser_id_bytes: "test", endorser_signature: "test", network_name: "test"},
-	}
-)
+// receiver function
+// func (tran *Transaction) UpdateTran(txtCount int64) {
+// 	tran.Txcount = txtCount
+// }

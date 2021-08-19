@@ -17,7 +17,6 @@ const (
 
 type DBInterface interface {
 	OpenConnection()
-	CloseConnection()
 }
 
 type DBConnection struct {
@@ -61,8 +60,3 @@ func (DB *DBConnection) OpenConnection() {
 	}
 
 }
-
-// // receiver function
-// func (DB *DBConnection) CloseConnection() {
-
-// }

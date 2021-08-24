@@ -40,7 +40,7 @@ func CreateTransaction(w http.ResponseWriter, r *http.Request) {
 	db := DB.ExposeDB
 	var t CoachingModel.Transaction
 	err := json.NewDecoder(r.Body).Decode(&t)
-	if err == nil {
+	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
@@ -48,10 +48,11 @@ func CreateTransaction(w http.ResponseWriter, r *http.Request) {
 	if err1 == nil {
 		w.WriteHeader(http.StatusBadRequest)
 		panic(err1)
+	} else {
+		fmt.Println("Success create transactions")
 	}
-
 	json.NewEncoder(w).Encode(t)
-	w.WriteHeader(http.StatusOK)
-	w.WriteHeader(http.StatusCreated)
+	// w.WriteHeader(http.StatusOK)
+	// w.WriteHeader(http.StatusCreated)
 
 }
